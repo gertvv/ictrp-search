@@ -1,7 +1,8 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var SearchkitExpress = require('./searchkit-express');
-var app = express();
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const SearchkitExpress = require('./searchkit-express');
+const app = express();
 app.use(bodyParser.json());
 
 SearchkitExpress({
@@ -17,6 +18,14 @@ SearchkitExpress({
   }
 }, app);
 
-app.listen(3001, function() {
-  console.log('http://localhost:3001');
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+const port = parseInt(process.argv[2]) || 3001;
+
+app.listen(port, function() {
+  console.log('http://localhost:' + port);
 });

@@ -20,3 +20,9 @@ Running for development
  - Run the server: `npm run server`
  - Run the client: `npm run client`
 
+Running in production
+---
+
+ - Install dependencies: `npm install`
+ - Build the client: `npm run build`
+ - Run the server: `npm run server [listen-port]`
