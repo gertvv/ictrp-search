@@ -1,0 +1,14 @@
+@import url('https://cdn.jsdelivr.net/searchkit/2.0.0/theme.css');
+
+.sk-input-filter__remove {
+  display: none;
+}
+
+.my-logo {
+  background-image: url("/logo.png");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-right: 7px;
+}
