@@ -1,0 +1,13 @@
+{
+  "name": "ictrp-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Gert van Valkenhoef",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "searchkit-express": "^0.2.1"
+  }
+}
