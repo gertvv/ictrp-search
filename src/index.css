@@ -12,3 +12,47 @@
   height: 40px;
   margin-right: 7px;
 }
+
+.sk-layout__top-bar {
+  top: 35px;
+  box-shadow: 0 4px 4px rgba(0,0,0,.14),0 8px 8px rgba(0,0,0,.28)
+}
+
+.sk-layout__top-bar h1 {
+  color: white;
+  margin: 0 0 0 20px;
+}
+
+.sk-layout__body {
+  margin-top: 95px;
+}
+
+.sk-layout__body .content {
+  margin: 10px;
+  max-width: 80em;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  background: #2a4466;
+  width: 100%;
+  height: 35px;
+  z-index: 100;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px;
+  line-height: 19px;
+}
+
+nav a:link, nav a:active, nav a:visited {
+  color: white;
+}
+
+nav a.active {
+  border-bottom: 2px solid white;
+}

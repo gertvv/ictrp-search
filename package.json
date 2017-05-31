@@ -14,6 +14,7 @@
     "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^2.0.0",
     "searchkit": "^2.0.0",
     "searchkit-daterangefilter": "^0.0.2",
     "searchkit-express": "^0.2.1"
