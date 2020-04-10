@@ -4,10 +4,9 @@ import { SearchkitManager, SearchkitProvider,
   SearchBox, RefinementListFilter, Pagination,
   HitsStats, SortingSelector, NoHits,
   ResetFilters, Hits,
-  InputFilter, GroupedSelectedFilters,
+  InputFilter, GroupedSelectedFilters, RangeFilter,
   Layout, TopBar, LayoutBody, LayoutResults,
   ActionBar, ActionBarRow, SideBar } from 'searchkit'
-import { DateRangeFilter } from "searchkit-daterangefilter"
 import './index.css'
 
 const searchkit = new SearchkitManager("/")
@@ -43,17 +42,21 @@ class App extends Component {
             <InputFilter id="conditions" searchThrottleTime={500} title="Conditions" placeholder="..." searchOnChange={true} queryFields={["health_conditions.description"]} />
             <InputFilter id="outcomes" searchThrottleTime={500} title="Outcomes" placeholder="..." searchOnChange={true} queryFields={["outcomes.description"]} />
             <InputFilter id="interventions" searchThrottleTime={500} title="Interventions" placeholder="..." searchOnChange={true} queryFields={["interventions.description"]} />
-            <DateRangeFilter 
+            <InputFilter id="secondary_ids" searchThrottleTime={500} title="Secondary IDs" placeholder="..." searchOnChange={true} queryFields={["secondary_ids"]} />
+            <RangeFilter
               id="date_registered"
               field="date_registered"
               title="Date registered"
-              min={1990} 
-              max={new Date().getFullYear()} 
-              interval="year"
+              min={631152000 * 1000}
+              max={new Date(new Date().getFullYear() + 1, 0, 1).getTime()}
+              interval={31556952 * 1000}
+              rangeFormatter={(time) => (new Date(time).getUTCFullYear())}
               showHistogram={true} />
             <RefinementListFilter id="recruitment_status" title="Recruitement status" field="recruitment_status" operator="OR" size={10}/>
             <RefinementListFilter id="registry" title="Registry" field="registry" operator="OR" size={10}/>
             <RefinementListFilter id="country" title="Country" field="countries" operator="OR" size={10}/>
+            <RefinementListFilter id="country_non_standard" title="Other geographic name" field="countries_non_standard" operator="OR" size={10}/>
+            <RefinementListFilter id="study_type" title="Study type" field="study_type" operator="OR" size={10}/>
           </SideBar>
           <LayoutResults>
             <ActionBar>

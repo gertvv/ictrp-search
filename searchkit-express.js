@@ -12,7 +12,7 @@ var createSearchkitRouter = function(config) {
     }
   });
 
-  var elasticRequest = function(url, body){
+  var elasticRequest = function(url, body) {
     var fullUrl = config.host+ "/" + config.index + url;
     debug("Start Elastic Request", fullUrl)
     if(_.isObject(body)){
@@ -27,14 +27,15 @@ var createSearchkitRouter = function(config) {
     if (config.aws) {
       request.aws = config.aws;
     }
-    return requestClient.post(request
-    ).on("response", function(response){
+    return requestClient.post(request)
+    .on("response", function(response) {
       debug("Finished Elastic Request", fullUrl, response.statusCode)
-    }).on("error", function(response){
+    })
+    .on("error", function(response) {
       debug("Error Elastic Request", fullUrl,response.statusCode)
     })
   }
-  router.post("/_search", function(req, res){
+  router.post("/_search", function(req, res) {
     var queryBody = config.queryProcessor(req.body || {}, req, res)
     elasticRequest("/_search", queryBody).pipe(res)
   });

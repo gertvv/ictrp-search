@@ -5,18 +5,21 @@ const SearchkitExpress = require('./searchkit-express');
 const app = express();
 app.use(bodyParser.json());
 
-SearchkitExpress({
+const searchKitSettings = {
   host: process.env['ES_HOST'],
   index: process.env['ES_INDEX'],
-  aws: {
-    key: process.env['AWS_ACCESS_KEY_ID'],
-    secret: process.env['AWS_SECRET_ACCESS_KEY'],
-    sign_version: 4
-  },
   queryProcessor: function(query, req, res){
     return query;
   }
-}, app);
+};
+if (process.env['AWS_ACCESS_KEY_ID']) {
+  searchKitSettings.aws = {
+    key: process.env['AWS_ACCESS_KEY_ID'],
+    secret: process.env['AWS_SECRET_ACCESS_KEY'],
+    sign_version: 4
+  };
+}
+SearchkitExpress(searchKitSettings, app);
 
 app.use(express.static(path.join(__dirname, 'build')));
 

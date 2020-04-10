@@ -12,10 +12,9 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "searchkit": "^2.0.0",
-    "searchkit-daterangefilter": "^0.0.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "searchkit": "^2.4.1",
     "searchkit-express": "^0.2.1"
   },
   "scripts": {
@@ -25,5 +24,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001/"
+  "proxy": "http://localhost:3001"
 }

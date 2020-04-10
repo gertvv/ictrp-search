@@ -16,13 +16,13 @@ Set the following environment variables:
 Running for development
 ---
 
- - Install dependencies: `nmp install`
- - Run the server: `npm run server`
- - Run the client: `npm run client`
+ - Install dependencies: `yarn install`
+ - Run the server: `yarn run server`
+ - Run the client: `yarn run client`
 
 Running in production
 ---
 
- - Install dependencies: `npm install`
- - Build the client: `npm run build`
- - Run the server: `npm run server [listen-port]`
+ - Install dependencies: `yarn install`
+ - Build the client: `yarn run build`
+ - Run the server: `yarn run server [listen-port]`
