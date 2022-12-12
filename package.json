@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "lodash": "^4.17.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
